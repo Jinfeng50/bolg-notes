@@ -40,8 +40,7 @@
 }
 
 .VPNavBar:not(.has-sidebar) .container,
-.VPHome .VPHero .container,
-.VPHomeFeatures .container {
+.VPHome .VPHero .container {
     max-width: var(--home-content-width);
     margin: 0 auto;
     padding-right: 32px;
@@ -49,7 +48,7 @@
 }
 
 .VPHome .VPHero .text {
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .VPHome .vp-doc.container {
@@ -81,6 +80,7 @@
     grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
     gap: 18px;
     margin: 4px auto 32px;
+    width: 100%;
 }
 
 .profile-card {
@@ -152,6 +152,7 @@
     color: var(--vp-c-text-2);
     background: var(--vp-c-bg-soft);
     font-weight: 650;
+    text-decoration: none;
     transition:
         border-color 0.2s,
         color 0.2s,
@@ -174,6 +175,7 @@
     gap: 0;
     margin: 0 auto 80px;
     border-top: 1px solid var(--vp-c-divider);
+    width: 100%;
 }
 
 .home-section-head {
@@ -204,6 +206,7 @@
     padding: 26px 0;
     border-top: 1px solid var(--vp-c-divider);
     color: inherit;
+    text-decoration: none;
     transition:
         border-color 0.2s,
         transform 0.2s;
@@ -244,6 +247,10 @@
     list-style: none;
 }
 
+.post-row li::before {
+    content: none;
+}
+
 .post-row li {
     padding: 3px 9px;
     border-radius: 999px;
@@ -277,6 +284,14 @@
 }
 .vp-doc code {
     font-size: 0.92em;
+}
+
+.vp-doc a {
+    text-underline-offset: 3px;
+}
+
+.vp-doc .line-numbers-wrapper {
+    color: var(--vp-c-text-3);
 }
 
 .vp-doc h2 {
@@ -377,6 +392,7 @@
     background: var(--vp-c-bg-soft);
     font-size: 14px;
     font-weight: 650;
+    text-decoration: none;
 }
 
 .tag-cloud a:hover {
@@ -422,13 +438,6 @@
     font-size: 12px;
 }
 
-@media (min-width: 960px) {
-    .VPContent.has-sidebar {
-        padding-left: var(--vp-sidebar-width);
-        padding-right: 0;
-    }
-}
-
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -459,10 +468,6 @@
 }
 
 @media (max-width: 767px) {
-    .VPHome .VPHero .text {
-        white-space: normal;
-    }
-
     .VPNavBar:not(.has-sidebar) .container,
     .VPHome .VPHero .container,
     .VPHome .vp-doc.container {
@@ -473,6 +478,7 @@
     .home-lab {
         grid-template-columns: 1fr;
         gap: 14px;
+        margin-top: 0;
     }
 
     .profile-card {
@@ -490,6 +496,10 @@
         padding: 22px 0;
     }
 
+    .post-row:hover {
+        transform: none;
+    }
+
     .post-row time {
         grid-column: 1 / -1;
     }
@@ -499,13 +509,22 @@
     }
 
     .vp-doc div[class*='language-'] {
-        margin-right: 0;
-        margin-left: 0;
+        margin-right: -4px;
+        margin-left: -4px;
         border-radius: 12px;
     }
 
     .vp-doc div[class*='language-'] pre {
-        padding: 18px 16px;
+        padding: 18px 12px;
+        overflow-x: auto;
+    }
+
+    .vp-doc div[class*='language-'].line-numbers-mode pre {
+        padding-left: 32px;
+    }
+
+    .vp-doc .line-numbers-wrapper {
+        width: 32px;
     }
 
     .vp-doc :not(pre) > code {

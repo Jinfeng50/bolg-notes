@@ -5,6 +5,7 @@ import { nextTick, onMounted, ref, watch } from 'vue'
 const container = ref<HTMLElement | null>(null)
 const loaded = ref(false)
 const loading = ref(false)
+const failed = ref(false)
 let activePath = ''
 const route = useRoute()
 const { frontmatter, isDark } = useData()
@@ -26,6 +27,7 @@ const loadComments = async () => {
 
   container.value.innerHTML = ''
   loaded.value = false
+  failed.value = false
   loading.value = true
 
   const script = document.createElement('script')
@@ -45,6 +47,7 @@ const loadComments = async () => {
   script.addEventListener('error', () => {
     if (activePath !== route.path) return
 
+    failed.value = true
     loading.value = false
   })
 
@@ -75,7 +78,10 @@ watch(isDark, updateTheme)
         GitHub 登录后评论
       </a>
     </div>
-    <p v-if="!loaded" class="comments-hint">
+    <p v-if="failed" class="comments-hint error">
+      评论加载失败，请检查网络或确认 utterances 已授权当前仓库。
+    </p>
+    <p v-else-if="!loaded" class="comments-hint">
       评论由 GitHub Issues 驱动。如果这里一直为空，请确认仓库已安装并授权 utterances。
     </p>
     <div ref="container" />

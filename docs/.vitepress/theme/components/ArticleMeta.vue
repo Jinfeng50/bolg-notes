@@ -9,6 +9,8 @@ const readingTime = computed(() => {
   if (typeof wordCount === 'number') return `${Math.max(1, Math.ceil(wordCount / 400))} 分钟阅读`
   return '短文'
 })
+
+const tagLink = (tag: string) => `/tags#${encodeURIComponent(tag.toLowerCase().replace(/\s+/g, '-'))}`
 </script>
 
 <template>
@@ -20,9 +22,9 @@ const readingTime = computed(() => {
       {{ frontmatter.summary }}
     </p>
     <div v-if="frontmatter.tags?.length" class="article-tags">
-      <span v-for="tag in frontmatter.tags" :key="tag" class="article-tag">
+      <a v-for="tag in frontmatter.tags" :key="tag" class="article-tag" :href="tagLink(tag)">
         # {{ tag }}
-      </span>
+      </a>
       <span class="article-tag muted">{{ readingTime }}</span>
     </div>
   </div>

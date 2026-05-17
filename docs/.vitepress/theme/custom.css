@@ -410,6 +410,11 @@
     background: var(--vp-c-bg-soft);
 }
 
+.comments-hint.error {
+    border-style: solid;
+    color: var(--vp-c-text-1);
+}
+
 .article-meta {
     margin: -4px 0 28px;
     padding: 0 0 18px;
@@ -431,12 +436,19 @@
 }
 
 .article-tag {
+    display: inline-flex;
+    align-items: center;
     padding: 3px 9px;
     border-radius: 999px;
     background: var(--vp-c-brand-soft);
     color: var(--vp-c-brand-1);
     font-size: 12px;
     font-weight: 600;
+    text-decoration: none;
+}
+
+a.article-tag:hover {
+    color: var(--vp-c-brand-3);
 }
 
 .article-tag.muted {

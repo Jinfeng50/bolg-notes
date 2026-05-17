@@ -287,26 +287,25 @@
     text-decoration: none;
 }
 
-.post-row ul {
+.post-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin: 14px 0 0;
     padding: 0;
-    list-style: none;
 }
 
-.post-row li::before {
-    content: none;
-}
-
-.post-row li {
-    padding: 3px 9px;
-    border-radius: 999px;
+.post-tags span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 3px 8px;
+    border-radius: 7px;
     color: var(--vp-c-text-2);
     background: var(--vp-c-bg-soft);
     font-size: 12px;
     font-weight: 650;
+    line-height: 1;
     text-decoration: none;
 }
 
@@ -579,7 +578,7 @@
         font-size: 20px;
     }
 
-    .post-row ul {
+    .post-tags {
         gap: 6px;
     }
 

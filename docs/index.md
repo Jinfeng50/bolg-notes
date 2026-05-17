@@ -1,4 +1,4 @@
----
+﻿---
 layout: home
 
 hero:
@@ -50,11 +50,7 @@ hero:
     <div>
       <h3>Linux 排障笔记</h3>
       <p>整理端口检查、进程定位和日常运维中高频使用的命令片段。</p>
-      <ul>
-        <li>Linux</li>
-        <li>排障</li>
-        <li>命令行</li>
-      </ul>
+      <div class="post-tags"><span>Linux</span><span>排障</span><span>命令行</span></div>
     </div>
     <span>↗</span>
   </a>
@@ -64,11 +60,7 @@ hero:
     <div>
       <h3>Git 工作流笔记</h3>
       <p>记录撤销提交、查看远端和协作场景里的常用 Git 操作。</p>
-      <ul>
-        <li>Git</li>
-        <li>工程效率</li>
-        <li>版本控制</li>
-      </ul>
+      <div class="post-tags"><span>Git</span><span>工程效率</span><span>版本控制</span></div>
     </div>
     <span>↗</span>
   </a>
@@ -78,11 +70,7 @@ hero:
     <div>
       <h3>AI 学习记录</h3>
       <p>记录模型能力、提示词原则和日常实践中的观察与思考。</p>
-      <ul>
-        <li>AI</li>
-        <li>模型</li>
-        <li>学习记录</li>
-      </ul>
+      <div class="post-tags"><span>AI</span><span>模型</span><span>学习记录</span></div>
     </div>
     <span>↗</span>
   </a>
@@ -92,10 +80,7 @@ hero:
     <div>
       <h3>项目实践整理</h3>
       <p>沉淀小工具、自动化脚本、实验项目和后续可以复用的实现经验。</p>
-      <ul>
-        <li>项目</li>
-        <li>工程实践</li>
-      </ul>
+      <div class="post-tags"><span>项目</span><span>工程实践</span></div>
     </div>
     <span>↗</span>
   </a>
@@ -105,10 +90,7 @@ hero:
     <div>
       <h3>文章归档</h3>
       <p>按时间回溯所有笔记，适合查找某次问题记录或阶段性整理。</p>
-      <ul>
-        <li>归档</li>
-        <li>时间线</li>
-      </ul>
+      <div class="post-tags"><span>归档</span><span>时间线</span></div>
     </div>
     <span>↗</span>
   </a>
@@ -118,11 +100,9 @@ hero:
     <div>
       <h3>标签索引</h3>
       <p>按主题聚合文章，方便从 Git、Linux、AI 和工程实践切入阅读。</p>
-      <ul>
-        <li>导航</li>
-        <li>标签</li>
-      </ul>
+      <div class="post-tags"><span>导航</span><span>标签</span></div>
     </div>
     <span>↗</span>
   </a>
 </section>
+

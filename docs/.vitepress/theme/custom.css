@@ -155,15 +155,22 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    align-items: center;
 }
 
 .profile-stats span {
-    padding: 8px 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    min-height: 34px;
+    padding: 7px 12px;
     border: 1px solid var(--vp-c-divider);
-    border-radius: 999px;
+    border-radius: 10px;
     color: var(--vp-c-text-2);
     background: color-mix(in srgb, var(--vp-c-bg), transparent 35%);
     font-size: 13px;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .profile-stats strong {
@@ -240,9 +247,16 @@
     border-top: 1px solid var(--vp-c-divider);
     color: inherit;
     text-decoration: none;
+    text-decoration-line: none;
     transition:
         border-color 0.2s,
         transform 0.2s;
+}
+
+.vp-doc a.post-row,
+.vp-doc .topic-strip a,
+.vp-doc .post-row * {
+    text-decoration: none;
 }
 
 .post-row:hover {
@@ -263,12 +277,14 @@
     font-size: 23px;
     line-height: 1.35;
     letter-spacing: -0.035em;
+    text-decoration: none;
 }
 
 .post-row p {
     margin: 0;
     color: var(--vp-c-text-2);
     line-height: 1.8;
+    text-decoration: none;
 }
 
 .post-row ul {
@@ -291,6 +307,7 @@
     background: var(--vp-c-bg-soft);
     font-size: 12px;
     font-weight: 650;
+    text-decoration: none;
 }
 
 .post-row > span {
@@ -601,8 +618,9 @@
     }
 
     .profile-stats span {
-        width: 100%;
-        text-align: center;
+        justify-content: center;
+        width: auto;
+        flex: 1 1 calc(50% - 8px);
     }
 }
 

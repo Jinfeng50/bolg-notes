@@ -17,14 +17,14 @@ hero:
 <section class="home-lab">
   <div class="profile-card">
     <div>
-      <p class="eyebrow">NOW BUILDING</p>
+      <p class="eyebrow">正在整理</p>
       <h2>把工程里的经验，写成以后能直接复用的笔记。</h2>
       <p>这里不会追求大而全，更关注真实问题的定位、修复、复盘和长期维护。</p>
     </div>
     <div class="profile-stats">
       <span><strong>3</strong> 篇笔记</span>
-      <span><strong>8</strong> 个标签</span>
-      <span><strong>1</strong> 个项目库</span>
+      <span><strong>1</strong> 个归档</span>
+      <span><strong>持续</strong> 更新</span>
     </div>
   </div>
 
@@ -40,7 +40,7 @@ hero:
 
 <section class="home-posts">
   <div class="home-section-head">
-    <p class="eyebrow">POPULAR WRITING</p>
+    <p class="eyebrow">精选内容</p>
     <h2>热门文章</h2>
     <p>像技术日志一样记录上下文、命令、取舍和结论，方便以后快速回到现场。</p>
   </div>
@@ -95,6 +95,19 @@ hero:
       <ul>
         <li>项目</li>
         <li>工程实践</li>
+      </ul>
+    </div>
+    <span>↗</span>
+  </a>
+
+  <a class="post-row" href="/archive">
+    <time>时间线</time>
+    <div>
+      <h3>文章归档</h3>
+      <p>按时间回溯所有笔记，适合查找某次问题记录或阶段性整理。</p>
+      <ul>
+        <li>归档</li>
+        <li>时间线</li>
       </ul>
     </div>
     <span>↗</span>

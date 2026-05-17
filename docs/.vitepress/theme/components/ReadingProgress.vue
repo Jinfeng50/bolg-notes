@@ -25,8 +25,10 @@ onBeforeUnmount(() => {
 })
 
 watch(() => route.path, () => {
+  if (!inBrowser) return
+
   progress.value = 0
-  requestAnimationFrame(updateProgress)
+  window.requestAnimationFrame(updateProgress)
 })
 </script>
 

@@ -4,6 +4,7 @@ import { nextTick, onMounted, ref, watch } from 'vue'
 
 const container = ref<HTMLElement | null>(null)
 const loaded = ref(false)
+const loading = ref(false)
 const route = useRoute()
 const { frontmatter, isDark } = useData()
 
@@ -15,11 +16,12 @@ const shouldShowComments = () => {
 }
 
 const loadComments = async () => {
-  if (!inBrowser || !container.value || !shouldShowComments()) return
+  if (!inBrowser || !container.value || !shouldShowComments() || loading.value) return
 
   await nextTick()
   container.value.innerHTML = ''
   loaded.value = false
+  loading.value = true
 
   const script = document.createElement('script')
   script.src = 'https://utteranc.es/client.js'
@@ -31,6 +33,10 @@ const loadComments = async () => {
   script.setAttribute('theme', utterancesTheme())
   script.addEventListener('load', () => {
     loaded.value = true
+    loading.value = false
+  })
+  script.addEventListener('error', () => {
+    loading.value = false
   })
 
   container.value.appendChild(script)

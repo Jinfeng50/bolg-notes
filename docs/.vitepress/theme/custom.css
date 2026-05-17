@@ -57,6 +57,14 @@
     padding-left: 32px;
 }
 
+.VPHomeHero .main {
+    max-width: 760px;
+}
+
+.VPHomeHero .actions {
+    flex-wrap: wrap;
+}
+
 .VPNavBar {
     backdrop-filter: saturate(180%) blur(14px);
 }
@@ -481,6 +489,15 @@
         margin-top: 0;
     }
 
+    .topic-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .topic-strip a {
+        min-width: 0;
+        padding: 13px 14px;
+    }
+
     .profile-card {
         padding: 22px;
         border-radius: 20px;
@@ -508,6 +525,10 @@
         font-size: 20px;
     }
 
+    .post-row ul {
+        gap: 6px;
+    }
+
     .vp-doc div[class*='language-'] {
         margin-right: -4px;
         margin-left: -4px;
@@ -529,6 +550,17 @@
 
     .vp-doc :not(pre) > code {
         word-break: break-word;
+    }
+}
+
+@media (max-width: 420px) {
+    .topic-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-stats span {
+        width: 100%;
+        text-align: center;
     }
 }
 

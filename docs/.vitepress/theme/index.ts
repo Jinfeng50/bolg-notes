@@ -1,5 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
+import ArticleActions from './components/ArticleActions.vue'
 import ArticleMeta from './components/ArticleMeta.vue'
 import AsideWidgets from './components/AsideWidgets.vue'
 import BackToTop from './components/BackToTop.vue'
@@ -10,6 +11,7 @@ import './custom.css'
 export default {
   extends: DefaultTheme,
   enhanceApp({ app }) {
+    app.component('ArticleActions', ArticleActions)
     app.component('ArticleMeta', ArticleMeta)
     app.component('AsideWidgets', AsideWidgets)
     app.component('BackToTop', BackToTop)
@@ -22,7 +24,7 @@ export default {
       'layout-bottom': () => h(BackToTop),
       'doc-before': () => h(ArticleMeta),
       'aside-outline-after': () => h(AsideWidgets),
-      'doc-after': () => h(Comments)
+      'doc-after': () => [h(ArticleActions), h(Comments)]
     })
   }
 }

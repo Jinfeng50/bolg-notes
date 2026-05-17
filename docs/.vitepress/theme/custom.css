@@ -44,25 +44,98 @@
     white-space: nowrap;
 }
 
-.VPHomeFeatures .items {
+.VPHome .vp-doc.container {
+    max-width: var(--home-content-width);
+    padding-right: 32px;
+    padding-left: 32px;
+}
+
+.home-posts {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    width: 100%;
+    gap: 14px;
+    margin: 8px auto 72px;
 }
 
-.VPHomeFeatures .item {
-    width: 100%;
-    max-width: none;
+.home-section-head {
+    margin-bottom: 8px;
+}
+
+.home-section-head .eyebrow {
+    margin: 0 0 8px;
+    color: var(--vp-c-brand-1);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.home-section-head h2 {
+    margin: 0;
+    border: 0;
     padding: 0;
+    color: var(--vp-c-text-1);
+    font-size: 28px;
+    letter-spacing: -0.03em;
 }
 
-.VPHomeFeatures .VPFeature {
-    width: 100%;
+.home-section-head p:last-child {
+    max-width: 720px;
+    margin: 10px 0 0;
+    color: var(--vp-c-text-2);
+    line-height: 1.8;
 }
 
-.VPHomeFeatures .box {
+.post-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
     width: 100%;
+    padding: 24px 26px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 18px;
+    background: var(--vp-c-bg-soft);
+    transition:
+        border-color 0.2s,
+        background 0.2s,
+        transform 0.2s;
+}
+
+.post-card:hover {
+    border-color: var(--vp-c-brand-1);
+    background: var(--vp-c-bg-alt);
+    transform: translateY(-2px);
+}
+
+.post-card.featured {
+    border-color: color-mix(in srgb, var(--vp-c-brand-1), transparent 58%);
+    background: linear-gradient(135deg, var(--vp-c-brand-soft), var(--vp-c-bg-soft) 46%);
+}
+
+.post-card h3 {
+    margin: 6px 0 8px;
+    color: var(--vp-c-text-1);
+    font-size: 22px;
+    line-height: 1.35;
+    letter-spacing: -0.03em;
+}
+
+.post-card p {
+    margin: 0;
+    color: var(--vp-c-text-2);
+    line-height: 1.75;
+}
+
+.post-card .post-meta {
+    color: var(--vp-c-text-3);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.post-card > span {
+    flex: 0 0 auto;
+    color: var(--vp-c-brand-1);
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .vp-doc code {
@@ -179,6 +252,28 @@
 }
 
 @media (max-width: 767px) {
+    .VPHome .VPHero .text {
+        white-space: normal;
+    }
+
+    .VPNavBar:not(.has-sidebar) .container,
+    .VPHome .VPHero .container,
+    .VPHome .vp-doc.container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .post-card {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        padding: 20px;
+    }
+
+    .post-card h3 {
+        font-size: 20px;
+    }
+
     .vp-doc div[class*='language-'] {
         margin-right: 0;
         margin-left: 0;

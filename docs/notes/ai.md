@@ -1,14 +1,3 @@
-# AI Notes
-
-## Prompting principle
-
-Be specific about:
-
-- Role
-- Context
-- Task
-- Output format
-- Constraints
 ---
 summary: 记录 AI 工具、模型能力和日常实践中的观察与思考。
 tags:
@@ -16,3 +5,15 @@ tags:
   - 模型
   - 学习记录
 ---
+
+# AI 笔记
+
+## 提示词原则
+
+提示词需要尽量明确：
+
+- 角色
+- 背景
+- 任务
+- 输出格式
+- 约束条件

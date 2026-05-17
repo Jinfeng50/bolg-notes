@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig( {
   lang: 'zh-CN',
   base: '/',
-  title: '金锋笔记',
+  title: 'Jinfeng 笔记',
   description: '技术笔记、想法和实践记录',
 
   cleanUrls: true,
@@ -21,6 +21,7 @@ export default defineConfig( {
 
     nav: [
       { text: '笔记', link: '/notes/' },
+      { text: '标签', link: '/tags' },
       { text: '项目', link: '/projects' },
       { text: '关于', link: '/about' }
     ],

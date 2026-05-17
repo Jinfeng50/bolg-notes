@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: 金锋笔记
+  name: Jinfeng 笔记
   text: 技术笔记、想法和实践记录。
   tagline: 记录问题，沉淀方法，持续交付。
   actions:

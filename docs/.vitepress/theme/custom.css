@@ -30,6 +30,34 @@
     max-width: 720px;
 }
 
+.VPNavBar.has-sidebar .content,
+.VPNavBar:not(.has-sidebar) .content,
+.VPNavBar.has-sidebar .curtain,
+.VPNavBar:not(.has-sidebar) .curtain {
+    padding-right: 32px;
+    padding-left: 32px;
+}
+
+.VPNavBar .container {
+    max-width: var(--vp-layout-max-width);
+    margin: 0 auto;
+}
+
+.VPHome .VPHero .text {
+    white-space: nowrap;
+}
+
+.VPHomeFeatures .items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.VPHomeFeatures .item {
+    width: 100%;
+    max-width: none;
+}
+
 .vp-doc code {
     font-size: 0.92em;
 }

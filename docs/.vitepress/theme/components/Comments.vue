@@ -5,6 +5,7 @@ import { nextTick, onMounted, ref, watch } from 'vue'
 const container = ref<HTMLElement | null>(null)
 const loaded = ref(false)
 const loading = ref(false)
+let activePath = ''
 const route = useRoute()
 const { frontmatter, isDark } = useData()
 
@@ -16,10 +17,12 @@ const shouldShowComments = () => {
 }
 
 const loadComments = async () => {
-  if (!inBrowser || !container.value || !shouldShowComments() || loading.value) return
+  if (!inBrowser || !container.value || !shouldShowComments()) return
+
+  activePath = route.path
 
   await nextTick()
-  if (!container.value) return
+  if (!container.value || activePath !== route.path) return
 
   container.value.innerHTML = ''
   loaded.value = false
@@ -34,10 +37,14 @@ const loadComments = async () => {
   script.setAttribute('label', 'comment')
   script.setAttribute('theme', utterancesTheme())
   script.addEventListener('load', () => {
+    if (activePath !== route.path) return
+
     loaded.value = true
     loading.value = false
   })
   script.addEventListener('error', () => {
+    if (activePath !== route.path) return
+
     loading.value = false
   })
 

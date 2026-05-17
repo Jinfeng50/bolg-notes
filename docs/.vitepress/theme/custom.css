@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --vp-c-brand-1: #00e5ff;
     --vp-c-brand-2: #00bcd4;
     --vp-c-brand-3: #008ba3;
@@ -50,22 +50,118 @@
     padding-left: 32px;
 }
 
-.home-posts {
+.VPNavBar {
+    backdrop-filter: saturate(180%) blur(14px);
+}
+
+.VPNavBar:not(.has-sidebar) .divider-line {
+    background: color-mix(in srgb, var(--vp-c-divider), transparent 25%);
+}
+
+.home-lab {
     display: grid;
-    gap: 14px;
-    margin: 8px auto 72px;
+    grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
+    gap: 18px;
+    margin: 4px auto 32px;
 }
 
-.home-section-head {
-    margin-bottom: 8px;
+.profile-card {
+    display: grid;
+    gap: 22px;
+    padding: 28px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 24px;
+    background:
+        radial-gradient(circle at top left, var(--vp-c-brand-soft), transparent 34%),
+        var(--vp-c-bg-soft);
 }
 
-.home-section-head .eyebrow {
-    margin: 0 0 8px;
+.profile-card h2 {
+    max-width: 720px;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    color: var(--vp-c-text-1);
+    font-size: 28px;
+    line-height: 1.35;
+    letter-spacing: -0.04em;
+}
+
+.profile-card p:not(.eyebrow) {
+    max-width: 680px;
+    margin: 12px 0 0;
+    color: var(--vp-c-text-2);
+    line-height: 1.8;
+}
+
+.eyebrow {
+    margin: 0 0 10px;
     color: var(--vp-c-brand-1);
     font-size: 12px;
     font-weight: 800;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
+}
+
+.profile-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.profile-stats span {
+    padding: 8px 12px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 999px;
+    color: var(--vp-c-text-2);
+    background: color-mix(in srgb, var(--vp-c-bg), transparent 35%);
+    font-size: 13px;
+}
+
+.profile-stats strong {
+    color: var(--vp-c-text-1);
+}
+
+.topic-strip {
+    display: grid;
+    gap: 10px;
+}
+
+.topic-strip a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 16px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 16px;
+    color: var(--vp-c-text-2);
+    background: var(--vp-c-bg-soft);
+    font-weight: 650;
+    transition:
+        border-color 0.2s,
+        color 0.2s,
+        transform 0.2s;
+}
+
+.topic-strip a::after {
+    content: '→';
+    color: var(--vp-c-text-3);
+}
+
+.topic-strip a:hover {
+    border-color: var(--vp-c-brand-1);
+    color: var(--vp-c-brand-1);
+    transform: translateX(2px);
+}
+
+.home-posts {
+    display: grid;
+    gap: 0;
+    margin: 0 auto 80px;
+    border-top: 1px solid var(--vp-c-divider);
+}
+
+.home-section-head {
+    padding: 30px 0 22px;
 }
 
 .home-section-head h2 {
@@ -73,71 +169,96 @@
     border: 0;
     padding: 0;
     color: var(--vp-c-text-1);
-    font-size: 28px;
-    letter-spacing: -0.03em;
+    font-size: 30px;
+    letter-spacing: -0.04em;
 }
 
 .home-section-head p:last-child {
-    max-width: 720px;
+    max-width: 760px;
     margin: 10px 0 0;
     color: var(--vp-c-text-2);
     line-height: 1.8;
 }
 
-.post-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    width: 100%;
-    padding: 24px 26px;
-    border: 1px solid var(--vp-c-divider);
-    border-radius: 18px;
-    background: var(--vp-c-bg-soft);
+.post-row {
+    display: grid;
+    grid-template-columns: 116px minmax(0, 1fr) 28px;
+    gap: 26px;
+    align-items: start;
+    padding: 26px 0;
+    border-top: 1px solid var(--vp-c-divider);
+    color: inherit;
     transition:
         border-color 0.2s,
-        background 0.2s,
         transform 0.2s;
 }
 
-.post-card:hover {
-    border-color: var(--vp-c-brand-1);
-    background: var(--vp-c-bg-alt);
-    transform: translateY(-2px);
+.post-row:hover {
+    border-color: color-mix(in srgb, var(--vp-c-brand-1), transparent 42%);
+    transform: translateX(3px);
 }
 
-.post-card.featured {
-    border-color: color-mix(in srgb, var(--vp-c-brand-1), transparent 58%);
-    background: linear-gradient(135deg, var(--vp-c-brand-soft), var(--vp-c-bg-soft) 46%);
+.post-row time {
+    color: var(--vp-c-text-3);
+    font-family: var(--vp-font-family-mono);
+    font-size: 12px;
+    line-height: 1.8;
 }
 
-.post-card h3 {
-    margin: 6px 0 8px;
+.post-row h3 {
+    margin: 0 0 8px;
     color: var(--vp-c-text-1);
-    font-size: 22px;
+    font-size: 23px;
     line-height: 1.35;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.035em;
 }
 
-.post-card p {
+.post-row p {
     margin: 0;
     color: var(--vp-c-text-2);
-    line-height: 1.75;
+    line-height: 1.8;
 }
 
-.post-card .post-meta {
+.post-row ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.post-row li {
+    padding: 3px 9px;
+    border-radius: 999px;
+    color: var(--vp-c-text-2);
+    background: var(--vp-c-bg-soft);
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.post-row > span {
     color: var(--vp-c-text-3);
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.2s;
 }
 
-.post-card > span {
-    flex: 0 0 auto;
+.post-row:hover > span,
+.post-row:hover h3 {
     color: var(--vp-c-brand-1);
-    font-size: 14px;
-    font-weight: 700;
 }
 
+.post-row.featured h3::after {
+    content: '推荐';
+    display: inline-block;
+    margin-left: 10px;
+    padding: 2px 7px;
+    border-radius: 999px;
+    color: var(--vp-c-brand-1);
+    background: var(--vp-c-brand-soft);
+    font-size: 12px;
+    vertical-align: middle;
+}
 .vp-doc code {
     font-size: 0.92em;
 }
@@ -263,6 +384,34 @@
         padding-left: 20px;
     }
 
+    .home-lab {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .profile-card {
+        padding: 22px;
+        border-radius: 20px;
+    }
+
+    .profile-card h2 {
+        font-size: 23px;
+    }
+
+    .post-row {
+        grid-template-columns: 1fr 24px;
+        gap: 12px;
+        padding: 22px 0;
+    }
+
+    .post-row time {
+        grid-column: 1 / -1;
+    }
+
+    .post-row h3 {
+        font-size: 20px;
+    }
+
     .post-card {
         align-items: flex-start;
         flex-direction: column;
@@ -288,3 +437,4 @@
         word-break: break-word;
     }
 }
+

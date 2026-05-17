@@ -3,6 +3,7 @@ import { inBrowser, useData, useRoute } from 'vitepress'
 import { nextTick, onMounted, ref, watch } from 'vue'
 
 const container = ref<HTMLElement | null>(null)
+const loaded = ref(false)
 const route = useRoute()
 const { frontmatter, isDark } = useData()
 
@@ -18,6 +19,7 @@ const loadComments = async () => {
 
   await nextTick()
   container.value.innerHTML = ''
+  loaded.value = false
 
   const script = document.createElement('script')
   script.src = 'https://utteranc.es/client.js'
@@ -27,6 +29,9 @@ const loadComments = async () => {
   script.setAttribute('issue-term', 'pathname')
   script.setAttribute('label', 'comment')
   script.setAttribute('theme', utterancesTheme())
+  script.addEventListener('load', () => {
+    loaded.value = true
+  })
 
   container.value.appendChild(script)
 }
@@ -45,5 +50,19 @@ watch(isDark, updateTheme)
 </script>
 
 <template>
-  <div v-if="shouldShowComments()" ref="container" class="comments" />
+  <section v-if="shouldShowComments()" class="comments">
+    <div class="comments-head">
+      <div>
+        <p>讨论</p>
+        <h2>评论区</h2>
+      </div>
+      <a href="https://github.com/apps/utterances" target="_blank" rel="noreferrer">
+        GitHub 登录后评论
+      </a>
+    </div>
+    <p v-if="!loaded" class="comments-hint">
+      评论由 GitHub Issues 驱动。如果这里一直为空，请确认仓库已安装并授权 utterances。
+    </p>
+    <div ref="container" />
+  </section>
 </template>

@@ -20,12 +20,17 @@ const calendarDays = [
   ...Array.from({ length: daysInMonth }, (_, index) => String(index + 1))
 ]
 
-const popularPosts = [
-  { text: 'Linux 排障笔记', link: '/notes/linux' },
-  { text: 'Git 工作流笔记', link: '/notes/git' },
-  { text: 'AI 学习记录', link: '/notes/ai' },
-  { text: '项目实践整理', link: '/projects' },
-  { text: '全部笔记索引', link: '/notes/' }
+const indexes = [
+  { text: '全部笔记', link: '/notes/' },
+  { text: '标签索引', link: '/tags' },
+  { text: '项目实践', link: '/projects' },
+  { text: '关于本站', link: '/about' }
+]
+
+const hotPosts = [
+  { text: 'Linux 排障笔记', link: '/notes/linux', meta: 'Linux / 排障' },
+  { text: 'Git 工作流笔记', link: '/notes/git', meta: 'Git / 效率' },
+  { text: 'AI 学习记录', link: '/notes/ai', meta: 'AI / 模型' }
 ]
 
 const issueUrl = () => {
@@ -37,14 +42,27 @@ const issueUrl = () => {
 <template>
   <div class="aside-widgets">
     <section class="aside-widget">
-      <h3>热门文章</h3>
+      <h3>快速入口</h3>
       <a
-        v-for="item in popularPosts"
+        v-for="item in indexes"
         :key="item.link"
         class="aside-link"
         :href="item.link"
       >
         <span>{{ item.text }}</span>
+      </a>
+    </section>
+
+    <section class="aside-widget">
+      <h3>热门文章</h3>
+      <a
+        v-for="item in hotPosts"
+        :key="item.link"
+        class="aside-link aside-post"
+        :href="item.link"
+      >
+        <span>{{ item.text }}</span>
+        <small>{{ item.meta }}</small>
       </a>
     </section>
 

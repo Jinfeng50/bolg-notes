@@ -60,6 +60,16 @@
     background: color-mix(in srgb, var(--vp-c-divider), transparent 25%);
 }
 
+.reading-progress {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--vp-c-brand-2), var(--vp-c-brand-1));
+    transition: width 0.12s ease-out;
+}
+
 .home-lab {
     display: grid;
     grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
@@ -276,6 +286,47 @@
     border-top: 1px solid var(--vp-c-divider);
 }
 
+.comments-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.comments-head p {
+    margin: 0 0 4px;
+    color: var(--vp-c-brand-1);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.comments-head h2 {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-size: 22px;
+}
+
+.comments-head a,
+.comments-hint {
+    color: var(--vp-c-text-2);
+    font-size: 13px;
+}
+
+.comments-head a:hover {
+    color: var(--vp-c-brand-1);
+}
+
+.comments-hint {
+    margin: 0 0 14px;
+    padding: 12px 14px;
+    border: 1px dashed var(--vp-c-divider);
+    border-radius: 12px;
+    background: var(--vp-c-bg-soft);
+}
+
 .article-meta {
     margin-bottom: 28px;
     padding: 16px 18px;
@@ -336,6 +387,13 @@
 
 .aside-link:hover {
     color: var(--vp-c-brand-1);
+}
+
+.aside-post small {
+    display: block;
+    margin-top: 2px;
+    color: var(--vp-c-text-3);
+    font-size: 12px;
 }
 
 @media (min-width: 960px) {
@@ -411,17 +469,6 @@
     }
 
     .post-row h3 {
-        font-size: 20px;
-    }
-
-    .post-card {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 14px;
-        padding: 20px;
-    }
-
-    .post-card h3 {
         font-size: 20px;
     }
 

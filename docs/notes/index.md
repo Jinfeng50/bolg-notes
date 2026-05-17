@@ -4,6 +4,6 @@
 
 ## 分类
 
-- [Git](/notes/git)
-- [Linux](/notes/linux)
-- [AI](/notes/ai)
+- [Git](./git)
+- [Linux](./linux)
+- [AI](./ai)

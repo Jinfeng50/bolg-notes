@@ -222,7 +222,7 @@
 
 .post-row:hover {
     border-color: color-mix(in srgb, var(--vp-c-brand-1), transparent 42%);
-    transform: translateX(3px);
+    transform: translateX(2px);
 }
 
 .post-row time {
@@ -300,6 +300,15 @@
 
 .vp-doc .line-numbers-wrapper {
     color: var(--vp-c-text-3);
+}
+
+.vp-doc div[class*='language-'] pre::-webkit-scrollbar {
+    height: 8px;
+}
+
+.vp-doc div[class*='language-'] pre::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: var(--vp-c-divider);
 }
 
 .vp-doc h2 {
@@ -561,6 +570,35 @@
     .profile-stats span {
         width: 100%;
         text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+@media print {
+    .VPNav,
+    .VPSidebar,
+    .VPDocAside,
+    .reading-progress,
+    .comments,
+    .aside-widgets {
+        display: none !important;
+    }
+
+    .VPContent,
+    .VPDoc,
+    .vp-doc {
+        padding: 0 !important;
+        max-width: none !important;
     }
 }
 

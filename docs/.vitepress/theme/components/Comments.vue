@@ -19,6 +19,8 @@ const loadComments = async () => {
   if (!inBrowser || !container.value || !shouldShowComments() || loading.value) return
 
   await nextTick()
+  if (!container.value) return
+
   container.value.innerHTML = ''
   loaded.value = false
   loading.value = true

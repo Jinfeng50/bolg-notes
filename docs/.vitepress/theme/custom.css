@@ -40,3 +40,79 @@
     padding-top: 24px;
     border-top: 1px solid var(--vp-c-divider);
 }
+
+.aside-widgets {
+    display: grid;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.aside-widget {
+    padding-top: 16px;
+    border-top: 1px solid var(--vp-c-divider);
+}
+
+.aside-widget h3 {
+    margin: 0 0 12px;
+    color: var(--vp-c-text-1);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.hot-comment {
+    display: block;
+    margin: 8px 0;
+    color: var(--vp-c-text-2);
+    font-size: 13px;
+    line-height: 1.5;
+    transition: color 0.2s;
+}
+
+.hot-comment:hover {
+    color: var(--vp-c-brand-1);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.calendar-grid span {
+    display: grid;
+    min-width: 0;
+    height: 24px;
+    place-items: center;
+    border-radius: 7px;
+    color: var(--vp-c-text-2);
+    font-size: 12px;
+}
+
+.calendar-weekdays span {
+    height: 18px;
+    color: var(--vp-c-text-3);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.calendar-grid .today {
+    background: var(--vp-c-brand-soft);
+    color: var(--vp-c-brand-1);
+    font-weight: 700;
+}
+
+@media (max-width: 767px) {
+    .vp-doc div[class*='language-'] {
+        margin-right: 0;
+        margin-left: 0;
+        border-radius: 12px;
+    }
+
+    .vp-doc div[class*='language-'] pre {
+        padding: 18px 16px;
+    }
+
+    .vp-doc :not(pre) > code {
+        word-break: break-word;
+    }
+}

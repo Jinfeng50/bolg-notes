@@ -26,7 +26,7 @@ export default defineConfig( {
         {
           text: 'Notes',
           items: [
-            { text: 'Index', link: '/notes/' },
+            { text: 'All Notes', link: '/notes/' },
             { text: 'Git', link: '/notes/git' },
             { text: 'Linux', link: '/notes/linux' },
             { text: 'AI', link: '/notes/ai' }

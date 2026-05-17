@@ -2,6 +2,10 @@
     --vp-c-brand-1: #00e5ff;
     --vp-c-brand-2: #00bcd4;
     --vp-c-brand-3: #008ba3;
+    --vp-layout-max-width: 1540px;
+    --vp-sidebar-width: 224px;
+    --vp-aside-width: 244px;
+    --vp-doc-max-width: 820px;
 
     --vp-font-family-base:
         Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
@@ -59,7 +63,7 @@
     font-weight: 700;
 }
 
-.hot-comment {
+.aside-link {
     display: block;
     margin: 8px 0;
     color: var(--vp-c-text-2);
@@ -68,8 +72,15 @@
     transition: color 0.2s;
 }
 
-.hot-comment:hover {
+.aside-link:hover {
     color: var(--vp-c-brand-1);
+}
+
+@media (min-width: 960px) {
+    .VPContent.has-sidebar {
+        padding-left: var(--vp-sidebar-width);
+        padding-right: 0;
+    }
 }
 
 .calendar-grid {

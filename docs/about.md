@@ -1,7 +1,7 @@
-# About
+# 关于
 
-Hi, I write notes about engineering, AI and systems.
+你好，我是金锋。这里记录工程实践、AI 学习和系统排障中的经验。
 
-## Links
+## 链接
 
 - GitHub: https://github.com/jinfeng50

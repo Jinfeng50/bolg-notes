@@ -1,9 +1,9 @@
-# Projects
+# 项目
 
-Small tools, experiments and open-source work.
+这里记录小工具、实验项目和开源实践。
 
-## Current
+## 当前关注
 
-- Personal knowledge base
-- Automation scripts
-- AI experiments
+- 个人知识库
+- 自动化脚本
+- AI 实验

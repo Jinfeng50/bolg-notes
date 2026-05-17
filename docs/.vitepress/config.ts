@@ -1,9 +1,10 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig( {
+  lang: 'zh-CN',
   base: '/',
-  title: 'Jinfeng Notes',
-  description: 'Personal technical notes and essays',
+  title: '金锋笔记',
+  description: '技术笔记、想法和实践记录',
 
   cleanUrls: true,
   lastUpdated: true,
@@ -16,17 +17,17 @@ export default defineConfig( {
     logo: '/favicon.svg',
 
     nav: [
-      { text: 'Notes', link: '/notes/' },
-      { text: 'Projects', link: '/projects' },
-      { text: 'About', link: '/about' }
+      { text: '笔记', link: '/notes/' },
+      { text: '项目', link: '/projects' },
+      { text: '关于', link: '/about' }
     ],
 
     sidebar: {
       '/notes/': [
         {
-          text: 'Notes',
+          text: '笔记',
           items: [
-            { text: 'All Notes', link: '/notes/' },
+            { text: '全部笔记', link: '/notes/' },
             { text: 'Git', link: '/notes/git' },
             { text: 'Linux', link: '/notes/linux' },
             { text: 'AI', link: '/notes/ai' }
@@ -45,16 +46,16 @@ export default defineConfig( {
 
     outline: {
       level: [2, 3],
-      label: 'On this page'
+      label: '本文目录'
     },
 
     docFooter: {
-      prev: 'Previous',
-      next: 'Next'
+      prev: '上一篇',
+      next: '下一篇'
     },
 
     lastUpdated: {
-      text: 'Updated at',
+      text: '最后更新',
       formatOptions: {
         dateStyle: 'medium',
         timeStyle: 'short'

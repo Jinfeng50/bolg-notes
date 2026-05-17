@@ -491,7 +491,8 @@
     justify-content: flex-end;
 }
 
-.article-action-links a {
+.article-action-links a,
+.article-action-links button {
     padding: 6px 10px;
     border: 1px solid var(--vp-c-divider);
     border-radius: 999px;
@@ -500,9 +501,11 @@
     font-size: 13px;
     font-weight: 650;
     text-decoration: none;
+    cursor: pointer;
 }
 
-.article-action-links a:hover {
+.article-action-links a:hover,
+.article-action-links button:hover {
     border-color: var(--vp-c-brand-1);
     color: var(--vp-c-brand-1);
 }

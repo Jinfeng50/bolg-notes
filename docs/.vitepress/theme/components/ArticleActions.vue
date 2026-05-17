@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { useRoute } from 'vitepress'
+import { inBrowser, useRoute } from 'vitepress'
+import { ref } from 'vue'
 
 const route = useRoute()
+const copied = ref(false)
 
 const editUrl = () => {
   const path = route.path.replace(/^\//, '').replace(/\/$/, '/index')
@@ -15,6 +17,16 @@ const relatedPosts = () => [
   { title: 'Linux 排障笔记', link: '/notes/linux', desc: '端口、进程和命令行' },
   { title: 'AI 学习记录', link: '/notes/ai', desc: '模型能力和提示词实践' }
 ].filter((post) => post.link !== route.path).slice(0, 2)
+
+const copyLink = async () => {
+  if (!inBrowser) return
+
+  await navigator.clipboard?.writeText(window.location.href)
+  copied.value = true
+  window.setTimeout(() => {
+    copied.value = false
+  }, 1600)
+}
 </script>
 
 <template>
@@ -25,6 +37,9 @@ const relatedPosts = () => [
         <h2>这篇笔记有帮助吗？</h2>
       </div>
       <div class="article-action-links">
+        <button type="button" @click="copyLink">
+          {{ copied ? '已复制' : '复制链接' }}
+        </button>
         <a href="/notes/">全部笔记</a>
         <a href="/tags">相关标签</a>
         <a :href="editUrl()" target="_blank" rel="noreferrer">编辑本文</a>
